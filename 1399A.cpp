@@ -40,27 +40,29 @@ int main(){
                 cin>>x;
                 v.push_back(x);
             }
-            
-            for(int i=0; i<n; i++){
-                for(int j=i+1; j<n; j++){
-                    int y=abs(v[j]-v[i]);
-                    if(y<=1){
-                        if(v[i]<v[j]){
-                            v[i]=-1;
-                            break;
-                        }
-                        else{
-                            v[j]=-1;
-                            break;
-                        }
-                    }    
-                }
-            }
             int z=check(v, n);
-            if(z) cout<<"YES"<<endl;
-            else cout<<"NO"<<endl;
+            if(z){
+                cout<<"YES"<<endl;
+            }
+            else{
+                for(int i=0; i<n; i++){
+                    for(int j=i+1; j<n; j++){
+                        int y=abs(v[j]-v[i]);
+                        if(y<=1){
+                            if(v[i]<v[j]){
+                                v[i]=-1;
+                            }
+                            else{
+                                v[j]=-1;
+                            }
+                        }
+                    }
+                }
+                bool res=check(v, n);
+                if(res) cout<<"YES"<<endl;
+                else cout<<"NO"<<endl;
+            }
         }
-        
 }
  
 //<<<<<<<<<<<<CodedBy>>>>>>>>>>>
