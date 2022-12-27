@@ -19,7 +19,6 @@ bool check(vector<int>arr, int key){
     }
     return 0;
 }
-//new commit
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
