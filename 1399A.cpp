@@ -7,7 +7,7 @@ using namespace std;
 #define lli long long int
 #define ll long long
 #define test lli t ; cin>>t; while(t--)
-
+ 
 bool checkeq(vector<int>v, int size){
     int sum=0;
     for(int i=0;i<size;i++){
@@ -18,7 +18,7 @@ bool checkeq(vector<int>v, int size){
     }
     return 0;
 }
-
+ 
 bool check(vector<int>v, int size){
     int count=0;
     for(int i=0; i<size; i++){
@@ -45,17 +45,11 @@ int main(){
                 cout<<"YES"<<endl;
             }
             else{
+                sort(v.begin(), v.end());
                 for(int i=0; i<n; i++){
                     for(int j=i+1; j<n; j++){
                         int y=abs(v[j]-v[i]);
-                        if(y<=1){
-                            if(v[i]<v[j]){
-                                v[i]=-1;
-                            }
-                            else{
-                                v[j]=-1;
-                            }
-                        }
+                        if(y<=1) v[i]=-1;
                     }
                 }
                 bool res=check(v, n);
