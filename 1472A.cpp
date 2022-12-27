@@ -40,6 +40,7 @@ int main(){
             }
             else{
                 cout<<"NO"<<endl;
+                break;
             }
         }
         return 0;
