@@ -21,7 +21,8 @@ int main(){
             if(str[i]=='W' && str[i+1]=='U' && str[i+2]=='B'){
                 i+=2;
                 if(!flag){ cout<<" ";
-                flag=1;}
+                    flag=1;
+                }
                 continue;
             }
             flag=0;
